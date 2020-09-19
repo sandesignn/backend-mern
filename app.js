@@ -34,6 +34,8 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge: 60000 }
 }));
+
+app.use(cors());
 app.use(flash());
 app.use(logger('dev'));
 app.use(express.json());
@@ -48,7 +50,6 @@ app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/api/v1/member', apiRouter);
 
-app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
