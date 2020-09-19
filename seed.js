@@ -2,7 +2,7 @@ var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb+srv://sandesign:halodev@cluster0.ff8hw.mongodb.net/bwamern?retryWrites=true&w=majority', {
+seeder.connect('mongodb://halodev:sandi123@cluster0-shard-00-00.ff8hw.mongodb.net:27017,cluster0-shard-00-01.ff8hw.mongodb.net:27017,cluster0-shard-00-02.ff8hw.mongodb.net:27017/bwamern?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: true,

@@ -8,7 +8,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 // import mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://sandesign:halodev@cluster0.ff8hw.mongodb.net/bwamern?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://halodev:sandi123@cluster0-shard-00-00.ff8hw.mongodb.net:27017,cluster0-shard-00-01.ff8hw.mongodb.net:27017,cluster0-shard-00-02.ff8hw.mongodb.net:27017/seed?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
