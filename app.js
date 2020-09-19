@@ -2,13 +2,14 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const cors = require('cors');
 var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 // import mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://halodev:sandi123@cluster0-shard-00-00.ff8hw.mongodb.net:27017,cluster0-shard-00-01.ff8hw.mongodb.net:27017,cluster0-shard-00-02.ff8hw.mongodb.net:27017/seed?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', {
+mongoose.connect('mongodb://halodev:sandi123@cluster0-shard-00-00.ff8hw.mongodb.net:27017,cluster0-shard-00-01.ff8hw.mongodb.net:27017,cluster0-shard-00-02.ff8hw.mongodb.net:27017/bwamern?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -46,6 +47,8 @@ app.use('/users', usersRouter);
 // admin
 app.use('/admin', adminRouter);
 app.use('/api/v1/member', apiRouter);
+
+app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
